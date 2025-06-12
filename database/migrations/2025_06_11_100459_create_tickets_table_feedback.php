@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::connection('feedback')->create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->string('ticket_type');
+             $table->string('ticket_type');
             $table->string('subject');
             $table->text('description');
+            $table->string('admin_input')->default('Pending');
+            $table->text('admin_comment')->nullable();
             $table->timestamps();
         });
     }
