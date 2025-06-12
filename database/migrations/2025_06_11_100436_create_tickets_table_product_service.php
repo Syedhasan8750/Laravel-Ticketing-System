@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('ticket_type');
             $table->string('subject');
             $table->text('description');
+            $table->string('admin_input')->default('Pending');
+            $table->text('admin_comment')->nullable();
             $table->timestamps();
         });
     }
